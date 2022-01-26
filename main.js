@@ -2,9 +2,6 @@ const eulerConstant = document.querySelector("#e-number");
 const tableContainer = document.querySelector("#table-container");
 const nextDigitButton = document.querySelector("#next-digit");
 
-// With the build-in Math module, dx = 1e-8 gives best results
-// This is sqrt of Number.EPSILON
-
 Decimal.set({ precision: 50 })
 
 const dx = new Decimal(1e-25);
@@ -22,6 +19,7 @@ function calculateTable(min, max, digits) {
         let base = step.mul(i).plus(min); // i * step + min
         base = new Decimal(base.toPrecision(digits));
         let result = calculateCoefficient(base);
+        if (result < 0) result = "Rechenfehler";
 
         table.push({
             base: base,
@@ -80,7 +78,7 @@ function findNextDigit(table, tableElement) {
         let base = table[i].base;
         let result = table[i].result;
         if ( // p0 < 1 && p1 >= 1
-                prevResult != undefined &&
+                prevResult != undefined && prevResult != "Rechenfehler" && result != "Rechenfehler" &&
                 prevResult.lt(1) && result.gte(1)
         ) {
             rows[i - 1].classList.add("floor");
