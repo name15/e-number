@@ -33,8 +33,8 @@ h1 {
 }
 #next-digit[disabled] {
     background-color: #ccc;
-    border: 2.5px solid darkgreen;
-    color: darkgreen;
+    border: 2.5px solid #555;
+    color: #555;
 }
 
 /* Ronded border */
