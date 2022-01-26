@@ -1,0 +1,103 @@
+body {
+    font-family: monospace;
+    font-size: x-large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-size: xxx-large;
+    margin-block-end: 0;
+}
+
+/* E paragraph */
+#e-container {
+    font-size: xx-large;
+    margin: 1em 0px;
+}
+
+/* Button */
+#next-digit {
+    padding: 5px;
+    border-radius: 7px;
+    border: 2.5px solid green;
+    background-color: white;
+    font-size: medium;
+    color: green;
+    font-weight: bold;
+    transition: background-color 0.5s ease-out,
+                color 0.5s ease-out,
+                border 0.5s ease-out;
+}
+#next-digit[disabled] {
+    background-color: #ccc;
+    border: 2.5px solid darkgreen;
+    color: darkgreen;
+}
+
+/* Ronded border */
+table { 
+    border: 1px solid #000;
+    border-collapse: separate;
+    border-left: 0;
+    border-radius: 6px;
+    border-spacing: 0px;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    border-collapse: separate;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+th, td {
+    padding: 0.33em 0.29em 0.37em 0.29em; 
+    vertical-align: top;
+    border-left: 1px solid #000;    
+}
+td {
+    border-top: 1px solid #000;
+    text-align: left;
+}
+thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+    border-radius: 5px 0 0 0;
+}
+thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+    border-radius: 0 0 0 5px;
+}
+
+/* Background color */
+tr {
+    transition: background-color 1.0s ease;
+}
+tr.floor {
+    background-color: red !important;
+}
+tr.ceil {
+    background-color: blue !important;
+}
+tr:nth-child(odd) {
+    background: #eee;
+}
+thead > tr {
+    background: #aaa !important;
+}
+
+/* No styles for the second table */
+table[no-border] {
+    border: none;
+    padding: 0.33em 0.29em 0.37em 0.29em;
+}
+table[no-border] > tbody > tr {
+    background-color: transparent;
+}
+table[no-border] > tbody > tr > td {
+    border: none;
+    padding: 0;
+}
