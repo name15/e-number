@@ -113,7 +113,7 @@ function FirstState() {
         digits++;
         eulerConstant.innerText = bounds.min;
         
-        if (digits < 20) {
+        if (digits < 22) {
             nextDigitButton.onclick = SecondState;
             nextDigitButton.disabled = false;
         } else {
